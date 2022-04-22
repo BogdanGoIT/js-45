@@ -1,7 +1,19 @@
-const a = 'Переменная "a" в module-4-1.js';
+// const doMAth = function (a, b, callback) { 
+//     const result = callback(a, b);
 
-console.log(a);
+//     console.log(result);
+// }
 
-const b = 'Переменная "b" в module-4-1.js';
 
-console.log(b);
+// doMAth(5, 10, (x, y) => x + y );
+// doMAth(5, 10, function (x, y) {
+//     return x - y;
+// });
+
+const buttonRef = document.querySelector('.js-button');
+
+const handleBtnClick = function () {
+    console.log('Клик по кнопке');
+};
+
+buttonRef.addEventListener('click', handleBtnClick);
