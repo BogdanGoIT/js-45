@@ -10,6 +10,9 @@
 //     return x - y;
 // });
 
+
+/* Отложенный вызов: регистрация событий */
+
 // const buttonRef = document.querySelector('.js-button');
 
 // const handleBtnClick = function () {
@@ -18,12 +21,43 @@
 
 // buttonRef.addEventListener('click', handleBtnClick);
 
-const onGetPositionSucces = function (position) {
-    console.log(position);
+
+/* Отложенный вызов: геолокация */
+
+// const onGetPositionSucces = function (position) {
+//     console.log(position);
+// }
+
+// const onGetPositionError = function (error) {
+//     console.log(error);
+// }
+
+// window.navigator.geolocation.getCurrentPosition(onGetPositionSucces, onGetPositionError);
+
+// 1. Надо передать ф-цию
+// 2. Ф-ция получает элимент массива
+// 3. если элимент массива удовлитворяет условие то ф-ция вернет true
+// 4. если элимент массива НЕ удовлитворяет условие то ф-ция вернет false
+
+const filter = function (array, callback) {
+    const filterArr = [];
+
+    for (const arr of array) {
+        console.log(arr);
+
+        if (callback(arr)) {
+            filterArr.push(arr);
+        }
+
+    }
+
+    return filterArr;
 }
 
-const onGetPositionError = function (error) {
-    console.log(error);
+const callback = function (value){
+    return value >= 3
 }
 
-window.navigator.geolocation.getCurrentPosition(onGetPositionSucces, onGetPositionError);
+console.log(filter([1, 2, 3, 4, 5], callback));
+
+console.log(filter([1,2,3,4,5], value => value <= 4 ));
