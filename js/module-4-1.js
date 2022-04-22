@@ -1,4 +1,4 @@
-// const doMAth = function (a, b, callback) { 
+// const doMAth = function (a, b, callback) {
 //     const result = callback(a, b);
 
 //     console.log(result);
@@ -10,10 +10,20 @@
 //     return x - y;
 // });
 
-const buttonRef = document.querySelector('.js-button');
+// const buttonRef = document.querySelector('.js-button');
 
-const handleBtnClick = function () {
-    console.log('Клик по кнопке');
-};
+// const handleBtnClick = function () {
+//     console.log('Клик по кнопке');
+// };
 
-buttonRef.addEventListener('click', handleBtnClick);
+// buttonRef.addEventListener('click', handleBtnClick);
+
+const onGetPositionSucces = function (position) {
+    console.log(position);
+}
+
+const onGetPositionError = function (error) {
+    console.log(error);
+}
+
+window.navigator.geolocation.getCurrentPosition(onGetPositionSucces, onGetPositionError);
