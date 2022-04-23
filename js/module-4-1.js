@@ -39,13 +39,14 @@
 // 3. если элимент массива удовлитворяет условие то ф-ция вернет true
 // 4. если элимент массива НЕ удовлитворяет условие то ф-ция вернет false
 
-const filter = function (array, callback) {
+const filter = function (array, test) {
     const filterArr = [];
 
     for (const arr of array) {
         console.log(arr);
+        const passed = test(arr); 
 
-        if (callback(arr)) {
+        if (passed) {
             filterArr.push(arr);
         }
 
@@ -59,5 +60,16 @@ const callback = function (value){
 }
 
 console.log(filter([1, 2, 3, 4, 5], callback));
+console.log(filter([1, 2, 3, 4, 5], value => value <= 4));
 
-console.log(filter([1,2,3,4,5], value => value <= 4 ));
+const fruits = [
+    { name: 'apples', quantity: 200, isFresh: true },
+    { name: 'grapes', quantity: 150, isFresh: false },
+    { name: 'bananas', quantity: 100, isFresh: true },
+];
+
+const getFruitsWithQuantity = function (fruit) {
+    return fruit.quantity >= 120;
+}
+
+console.log(filter(fruits, getFruitsWithQuantity));
