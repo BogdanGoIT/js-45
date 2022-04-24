@@ -18,4 +18,4 @@ const isAllOnline = players.every(player => player.online);
 // - возвращает true если хотя бы один элимент массива удовлитворяет условию
 
 const isAnyOnline = players.some(({ online }) => online)
-console.log(isAnyOnline);
+// console.log(isAnyOnline);
