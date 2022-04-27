@@ -113,21 +113,21 @@
 
 // тренируемся 5
 
-const counter = {
-    value: 0,
-    increment(value) {
-        console.log('increment -> this', this);
-        this.value += value;
-    },
-    decrement(value) {
-        console.log('decrement -> this', this);
-        this.value -= value;
-    },
-};
+// const counter = {
+//     value: 0,
+//     increment(value) {
+//         console.log('increment -> this', this);
+//         this.value += value;
+//     },
+//     decrement(value) {
+//         console.log('decrement -> this', this);
+//         this.value -= value;
+//     },
+// };
 
-const updateCounter = function (value, operation) {
-    operation(value);
-};
+// const updateCounter = function (value, operation) {
+//     operation(value);
+// };
 
 // при передаче методов обьекта как callback контекст не сохраняется
 
@@ -137,8 +137,66 @@ const updateCounter = function (value, operation) {
 
 // call и apply
 
-const showThis = function (...args) {
-    console.log(args);
-    console.log('showThis -> this', this);
-};
+// const showThis = function (...args) {
+//     console.log(args);
+//     console.log('showThis -> this', this);
+// };
+
+// showThis();
+
+// const objA = {
+//     a: 5,
+//     b: 10,
+// };
+
+// showThis.call(objA);
+
+// // передаем аргументы как массив
+// showThis.apply(objA, [5, 10, 15]);
+
+// const objB = {
+//     a: 788,
+//     b: 250,
+// };
+
+
+// // обращаюсь к обькту ф-ци showThis, вызови у себя метод call(context, [...args])
+// showThis.call(objB, 10, 20, 30);
+
+// showThis();
+
+
+
+// const changeColor = function (color) {
+//     console.log('changeColor -> this', this);
+//     this.color = color;
+// };
+
+
+// const hat = {
+//     color: 'black',
+// }
+
+// changeColor.call(hat, 'orange');
+// console.log(hat);
+
+
+// const sweater = {
+//     color: 'green',
+// }
+
+// // changeColor.call(sweater, 'blue');
+// // console.log(sweater);
+
+
+// // bind - делает копию с привязаным контекстом( оригинальная ф-ция не изминяяется )
+// // changeColor();
+// const changeHatColor = changeColor.bind(hat);
+// const changeSweaterColor = changeColor.bind(sweater);
+
+// changeHatColor('yellow');
+// console.log(hat);
+
+// changeSweaterColor('red');
+// console.log(sweater);
 
