@@ -21,7 +21,7 @@
 
 
 // Car.prototype.changePrice = function (newPrice) {
-//          price = newPrice;
+//          this.price = newPrice;
 //  }
 
 
@@ -31,7 +31,10 @@
 //     model: 'b6',
 //     price: '350000'
 // });
-// console.log(myCar);
+
+// console.log(myCar);  -> price: 350000
+// myCar.changePrice(100000);
+// console.log(myCar); -> price: 100000
 
 // const myCar2 = new Car({
 //     brand: 'BMW',
@@ -65,7 +68,7 @@ const Car = function ({ brand, model, price } = {}) {
 
 
 Car.prototype.changePrice = function (newPrice) {
-         price = newPrice;
+         this.price = newPrice;
  }
 
 
@@ -73,17 +76,41 @@ Car.prototype.changePrice = function (newPrice) {
 const myCar = new Car({
     brand: 'Audi',
     model: 'b6',
-    price: '350000'
+    price: 350000
 });
 console.log(myCar);
 
-const myCar2 = new Car({
-    brand: 'BMW',
-    model: 'x5',
-    price: '200000'
+myCar.changePrice(100000);
+
+console.log(myCar);
+
+// const myCar2 = new Car({
+//     brand: 'BMW',
+//     model: 'x5',
+//     price: 200000
+// });
+
+// console.log(myCar2);
+
+// const myCar3 = new Car();
+// console.log(myCar3);
+
+
+const User = function ({email, password} = {} ) {
+    
+    this.email = email;
+    this.password = password;
+
+};
+
+User.prototype.changeEmail = function (newMail) {
+    this.email = newMail;
+}
+
+const mango = new User({
+    email: 'email@gmail.com',
+    password: 'fgJ525',
 });
 
-console.log(myCar2);
-
-const myCar3 = new Car();
-console.log(myCar3);
+mango.changeEmail('fox@mail.ua');
+console.log(mango);
