@@ -48,72 +48,72 @@
 // console.log(myCar3);
 
 
-// деструктуризируем в параметрах:
-const Car = function ({ brand, model, price } = {}) {
-    // деструктуризация аргументов в теле:
-    // const { brand, model, price } = config;
+// // деструктуризируем в параметрах:
+// const Car = function ({ brand, model, price } = {}) {
+//     // деструктуризация аргументов в теле:
+//     // const { brand, model, price } = config;
 
-    // 2. Функция вызываеться в контексте созданого обьекта
-    //    тоесть в this записываеться ссылка на него
+//     // 2. Функция вызываеться в контексте созданого обьекта
+//     //    тоесть в this записываеться ссылка на него
      
-    this.brand = brand;
-    this.model = model;
-    this.price = price;
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
 
-    // 3. в свойство this.[[Prototype]] записываеться ссылка на обьект Car.prototype
-    //    тоесть Car.prototype это ПРОТОТИП будущего обьекта (экземпляра)
+//     // 3. в свойство this.[[Prototype]] записываеться ссылка на обьект Car.prototype
+//     //    тоесть Car.prototype это ПРОТОТИП будущего обьекта (экземпляра)
     
-    // 4. ссылка на обьект возвращаеться в место вызова new Car
-};
+//     // 4. ссылка на обьект возвращаеться в место вызова new Car
+// };
 
 
-Car.prototype.changePrice = function (newPrice) {
-         this.price = newPrice;
- }
+// Car.prototype.changePrice = function (newPrice) {
+//          this.price = newPrice;
+//  }
 
 
-// 1. Если функция вызывается через new, создаеться пустой обьект
-const myCar = new Car({
-    brand: 'Audi',
-    model: 'b6',
-    price: 350000
-});
-console.log(myCar);
+// // 1. Если функция вызывается через new, создаеться пустой обьект
+// const myCar = new Car({
+//     brand: 'Audi',
+//     model: 'b6',
+//     price: 350000
+// });
+// console.log(myCar);
 
-myCar.changePrice(100000);
+// myCar.changePrice(100000);
 
-console.log(myCar);
+// console.log(myCar);
 
-// const myCar2 = new Car({
-//     brand: 'BMW',
-//     model: 'x5',
-//     price: 200000
+// // const myCar2 = new Car({
+// //     brand: 'BMW',
+// //     model: 'x5',
+// //     price: 200000
+// // });
+
+// // console.log(myCar2);
+
+// // const myCar3 = new Car();
+// // console.log(myCar3);
+
+// // созлаем пользователя
+// const User = function ({email, password} = {} ) {
+    
+//     this.email = email;
+//     this.password = password;
+
+// };
+
+// User.prototype.changeEmail = function (newMail) {
+//     this.email = newMail;
+// }
+
+// const mango = new User({
+//     email: 'email@gmail.com',
+//     password: 'fgJ525',
 // });
 
-// console.log(myCar2);
-
-// const myCar3 = new Car();
-// console.log(myCar3);
-
-// созлаем пользователя
-const User = function ({email, password} = {} ) {
-    
-    this.email = email;
-    this.password = password;
-
-};
-
-User.prototype.changeEmail = function (newMail) {
-    this.email = newMail;
-}
-
-const mango = new User({
-    email: 'email@gmail.com',
-    password: 'fgJ525',
-});
-
-mango.changeEmail('fox@mail.ua');
-console.log(mango);
+// mango.changeEmail('fox@mail.ua');
+// console.log(mango);
 
 
 // 1. У каждого обьекта есть свойство [[Prototype]]
@@ -126,3 +126,28 @@ console.log(mango);
 // 8.  в свойство this.[[Prototype]] записываеться ссылка на обьект Функция.prototype:
     // this = Object.create(User.prototype)
 // 9. ссылка на обьект возвращаеться в место вызова new Функция()
+
+
+// Статичиские свойства и методы
+// - статические свойства и методы, доступны только на самом конструкторе
+// - в статических методах не нужен this
+
+// console.log(Math.round(5.1));
+// console.log(Math.PI);
+
+
+// User.message = 'Я статическое свойство, меня нет на экземплярах или в прототипе.';
+
+// User.logInfo = function (obj) {
+//     console.log(obj);
+//     console.log(obj.email);
+//     console.log(obj.password);
+
+// }
+
+// console.dir(User);
+// User.logInfo(mango);
+
+// Object.keys();
+// Object.value();
+
