@@ -92,3 +92,65 @@ carInstance.price = 380000;
 console.log(carInstance.price);
 
 console.log(carInstance);
+
+
+// ## Example 4 - Заметки
+
+// Напиши класс `Notes` который управляет коллекцией заметок в свойстве `items`.
+// Заметка это объект со свойствами `text` и `priority`. Добавь классу статическое
+// свойство `Priority`, в котором будет храниться объект с приоритетами.
+
+class Notes {
+  constructor(items) {
+    this.items = items;
+  }
+
+  static Priority = { LOW: "low", NORMAL: "normal", HIGH: "high" };
+
+  addNote(note) {
+    this.items.push(note);
+  }
+
+  removeNote(text) {
+    this.items = this.items.filter((item) => item.text !== text);
+  }
+
+  updatePriority(newText, newPriority) {
+    this.items = this.items.map((item) =>
+      item.text === newText ? { ...item, priority: newPriority } : item
+    );
+  }
+}
+
+// item.text === newText
+// true
+// {...item, priority: newPriority }
+
+// const user = {
+//   name: "Bob",
+//   age: 15,
+// };
+
+// const user2 = {
+//   ...user,
+//   age: 45,
+// };
+
+// {name: 'Bob', age: 45}
+
+const myNotes = new Notes([]);
+
+myNotes.addNote({ text: "Моя первая заметка", priority: Notes.Priority.LOW });
+console.log(myNotes.items);
+
+myNotes.addNote({
+  text: "Моя вторая заметка",
+  priority: Notes.Priority.NORMAL,
+});
+console.log(myNotes.items);
+
+myNotes.removeNote("Моя первая заметка");
+console.log(myNotes.items);
+
+myNotes.updatePriority("Моя вторая заметка", Notes.Priority.HIGH);
+console.log(myNotes.items);

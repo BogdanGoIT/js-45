@@ -73,3 +73,97 @@ const getFruitsWithQuantity = function (fruit) {
 }
 
 console.log(filter(fruits, getFruitsWithQuantity));
+
+
+
+// function logProduct(product) {
+//     console.log(product);
+// }
+
+// function logTotalPrice({price, quantity}) {
+//     console.log(price * quantity);
+// }
+
+// function createProduct(obj, cb) {
+//     const product = { ...obj, id: Date.now(), }
+//     cb(product);
+// }
+
+// createProduct(
+//     {
+//         name: 'apple',
+//         price: 30, quantity: 3
+//     },
+//     logProduct
+// );
+// createProduct({name: 'lemon', price: 20, quantity: 5}, logTotalPrice);
+
+// const TRANSACTION_LIMIT = 1000;
+
+// const account = {
+//     usarname: 'Jacob',
+//     balance: 400,
+//     withdraw(amount, onError, onSuccess) {
+//         if (amount > TRANSACTION_LIMIT) {
+//             onError('сума перевишує ліміт');
+//             return;
+//         }
+//         if (amount > this.balance) {
+//             onError("сума перевищує баланс");
+//             return;
+//         }
+
+//         this.balance -= amount;
+//         onSuccess('кошти знято успішно')
+//     },
+//     deposit(amount, onError, onSuccess) {
+//         if (amount > TRANSACTION_LIMIT) {
+//             onError('сума перевишує ліміт');
+//             return;
+//         }
+//          if (amount < 0) {
+//             onError('сума меньша нуля');
+//             return;
+//         }
+//          if (amount === 0) {
+//             onError('ви ввели не коректну суму');
+//             return;
+//         }
+//         this.balance += amount;
+//         onSuccess('баланc поповнено успішно');
+//     }
+// }
+
+// function handleSuccess(message) {
+//     console.log('Success', message);
+// }
+
+// function handleError(message) {
+//     console.log('Error: ', message);
+// }
+
+// // account.withdraw(2000, handleError);
+// // account.withdraw(600, handleError);
+
+// account.withdraw(300, handleError, handleSuccess);
+// account.deposit(0, handleError, handleSuccess);
+
+
+
+// function each(array, cb) {
+//     const result = [];
+//     for (let arr of array) {
+//         result.push(cb(arr));
+//     }
+
+//     return result;
+// }
+
+// console.log(
+//     each([64, 49, 54, 52, 16], value => value * 2)
+// );
+    
+// console.log(
+//     each([64, 49, 54, 52, 16], value => value - 20)
+//     );
+

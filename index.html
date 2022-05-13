@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- parentElement -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module-4 </title>
-</head>
+</head> <!-- previousElementSibling -->
 <body>
+        <section> <!-- firstElementChild -->
+            <h2 id="title">Popular technologies</h2>
+            <ul class="list"></ul>
+        </section>
 
     <button class="js-button">Это кнопка</button>
+
+    <nav>
+        <ul class="site-nav site-nav__text">
+            <li data-item="40" class="site-nav__item">
+                <a class="site-nav__link"  href="">О нас</a>
+            </li>
+            <li class="site-nav__item">
+                <a class="site-nav__link" href="">Портфолио</a>
+            </li>
+            <li data-item="85" class="site-nav__item">
+                <a class="site-nav__link" href="">Контакты</a>
+            </li>
+        </ul>
+    </nav>
+
+
+   
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <!-- <script src="./js/callback.js" type="module"></script> -->
@@ -26,10 +47,19 @@
     <!-- <script src="./js/this.js" type="module"></script> -->
     <!-- <script src="./js/constructors.js" type="module"></script> -->
 
-    <!-- <script src="./js/autochecking.js" type="module"></script> -->
+    <script src="./js/autochecking.js" type="module"></script> <!-- lastElementChild-->
+
+    <!-- <script src="./js/syntax.js" type="module"></script> -->
+    
+    <!-- <script src="./js/objectkeys.js" type="module"></script> -->
+    <!-- <script src="./js/restSpread.js" type="module"></script> -->
 
     <!-- <script src="./js/object-prototype.js" type="module"></script> -->
     <!-- <script src="./js/class.js" type="module"></script> -->
-    <script src="./js/inheritance.js" type="module"></script>
+    <!-- <script src="./js/inheritance.js" type="module"></script> -->
+
+    <!-- <script src="./js/query-selector.js" type="module"></script> -->
+
 </body>
+<!-- nextElementSibling -->
 </html>

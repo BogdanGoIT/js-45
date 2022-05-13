@@ -202,23 +202,43 @@
 
 
 
-const counter = {
-    value: 0,
-    increment(value) {
-        console.log('increment -> this', this);
-        this.value += value;
-    },
-    decrement(value) {
-        console.log('decrement -> this', this);
-        this.value -= value;
-    },
-};
+// const counter = {
+//     value: 0,
+//     increment(value) {
+//         console.log('increment -> this', this);
+//         this.value += value;
+//     },
+//     decrement(value) {
+//         console.log('decrement -> this', this);
+//         this.value -= value;
+//     },
+// };
 
-const updateCounter = function (value, operation) {
-    operation(value);
-};
+// const updateCounter = function (value, operation) {
+//     operation(value);
+// };
 
-updateCounter(10, counter.increment.bind(counter));
-updateCounter(5, counter.decrement.bind(counter));
+// updateCounter(10, counter.increment.bind(counter));
+// updateCounter(5, counter.decrement.bind(counter));
 
-console.log(counter);
+// console.log(counter);
+
+
+
+// function showThis() {
+//   console.log('this in showThis: ', this);
+  
+// }
+
+// showThis(); // this in showThis: Window // "use strict" => undefined
+
+// const user = {
+//   username: 'Mango',
+//   // showContext: function showThis() {
+//   //   console.log('this in showThis: ', this);
+//   // }
+// };
+
+// user.showContext = showThis; 
+
+// user.showContext();  // user.showContext =  function showThis() { console.log('this in showThis: ', this); }

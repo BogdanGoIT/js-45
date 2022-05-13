@@ -40,3 +40,35 @@ console.table(offlinePlayers);
 const hardcorePlayer = players.filter(({ timePlayed }) => timePlayed > 250);
 console.table(hardcorePlayer);
 
+
+// filter - пошук унікальних значень
+
+const allCourses = ['JS', 'HTML', 'JS', 'React'];
+
+const uniqueCourses = allCourses
+    .filter((course, index, array) => array.indexOf(course) === index);
+
+// 1 итерация
+// course = 'JS'
+// index = allCourses.indexOf('JS')
+// 0 === 0 // true
+// ['JS']
+
+// 2 итерация
+// course = 'HTML'
+// index = allCourses.indexOf('HTML')
+// 1 === 1 // true
+// ['JS', 'HTML']
+
+// 3 итерация
+// course = 'JS'
+// index = allCourses.indexOf('JS')
+// 0 === 2 // false
+// ['JS', 'HTML']
+
+console.log(uniqueCourses);
+
+// new Set() - пошук унікальних значень
+
+console.log(new Set(allCourses));
+
