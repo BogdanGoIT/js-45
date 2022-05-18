@@ -31,8 +31,10 @@ console.log(makeTransactionTableRowMarkup(transactionHistory[2]));
 
 const tableEl = document.querySelector('.js-transaction-table');
 
+// получаем массив строк, но повесить массив не можем, поэтому join - делаем одну огромною строку
 const makeTransactionTableRows = transactionHistory.map(makeTransactionTableRowMarkup).join('');
 
+// принимает одну строку, а не массив строк
 tableEl.insertAdjacentHTML('beforeend', makeTransactionTableRows);
 
 console.log(makeTransactionTableRows);

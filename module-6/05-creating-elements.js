@@ -7,13 +7,16 @@
  * Создаём заголовок
  */
 
-
+// создать в памяти тег <h1>
 const titleEl = document.createElement('h1');
-// console.log(titleEl);
+
+// добавить класс на <h1>
 titleEl.classList.add('page-title');
+
+// добавить текст
 titleEl.textContent = 'Йобана срака';
 
-// присоиденить ребёнка body в конец
+// присоиденить ребёнка к body в конец
 // document.body.appendChild(titleEl);
 
 /*
@@ -33,34 +36,39 @@ document.body.appendChild(imageEl);
 
 
 const heroEl = document.querySelector('.hero');
+
+// appendChild - для вставки одного элимента
 // heroEl.appendChild(titleEl);
 // heroEl.appendChild(imageEl);
 
-// для вставки больше 1-го элимента
+// append - для вставки больше 1-го элимента
 heroEl.append(titleEl, imageEl);
 console.log(heroEl);
+
 /*
  * Создаём и добавляем новый пункт меню
  */
 
 const navItemEl = document.createElement('li');
 navItemEl.classList.add('site-nav__item');
-// console.log(navItemEl);
 
 const navLinkEl = document.createElement('a');
 navLinkEl.classList.add('site-nav__link');
 navLinkEl.textContent = 'Личный кабинет';
 navLinkEl.href = '/profile';
 
-// console.log(navLinkEl);
-
 // li => в котором вложен => a
 navItemEl.appendChild(navLinkEl);
+console.log(navItemEl);
 
 const navEl = document.querySelector('.site-nav');
 
-navEl.appendChild(navItemEl);
+// в ul -> вставить последним элементом li
+// navEl.appendChild(navItemEl);
 
-// вставить любое место
-navEl.insertBefore(navItemEl, navEl.firstElementChild);
+// li вставь перед первым элементом ul>li
+// navEl.insertBefore(navItemEl, navEl.firstElementChild);
+
+// li вставь перед вторым элементом ul>li
+navEl.insertBefore(navItemEl, navEl.children[1]);
 

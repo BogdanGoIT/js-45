@@ -10,10 +10,12 @@ console.log(magicBtn);
 
 magicBtn.addEventListener('click', () => {
 
-    const navEl = document.querySelector('.site-nav__item'); // null
+    // находит один уникальный, первое совпадение
+    const navEl = document.querySelector('.site-nav'); // null
     console.log(navEl);
 
-    const navLinksEl = document.querySelectorAll('.site-nav__link');  // NodeList []
+    // найти колекцию в поддереве navEl
+    const navLinksEl = navEl.querySelectorAll('.site-nav__link');  // NodeList []
     console.log(navLinksEl);
 
 })

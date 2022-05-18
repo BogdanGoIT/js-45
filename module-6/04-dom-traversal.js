@@ -10,13 +10,16 @@ console.log(navEl);
 
 // первый ребенок ul
 const firstNavItemEl = navEl.firstElementChild;
-console.log(firstNavItemEl);
+console.log('первый ребенок ul: ', firstNavItemEl);
 
-// все дети ul
-console.log(navEl.children);
+// все дети ul (html-коллекция)
+console.log('все дети ul: ', navEl.children);
+
+// получить доступ ко второму элементу ul
+console.log('получить доступ ко второму элементу ul: ', navEl.children[1]);
 
 // последний ребенок ul
-console.log(navEl.lastElementChild);
+console.log('последний ребенок ul: ', navEl.lastElementChild);
 
 
 // Для навігації по цій ієрархії елементи мають наступні властивості.

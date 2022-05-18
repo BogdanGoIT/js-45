@@ -2017,62 +2017,121 @@ const elms = document.querySelectorAll('li');
 
 
 
-// Создание нового элимента (тега)
-const newEl = document.createElement('div');
+// // Создание нового элимента (тега)
+// const newEl = document.createElement('div');
 
 
-// получаем обьект
-const title = document.querySelector('h2')
+// // получаем обьект
+// const title = document.querySelector('h2')
 
-// переносим title в конец newEl
-newEl.append(title);
-
-
-// удаление узлов
-
-// получаем обьект
-const newObjEl = document.querySelector('.site-nav__item');
-
-// удаляем обьекта
-newObjEl.remove();
+// // переносим title в конец newEl
+// newEl.append(title);
 
 
-// Управление класами
-// Свойства className и classList
+// // удаление узлов
 
-// свойство className
+// // получаем обьект
+// const newObjEl = document.querySelector('.site-nav__item');
 
-// получаем элемент
-const el = document.querySelector('.site-nav__text');
+// // удаляем обьекта
+// newObjEl.remove();
 
-// получаем имена классов
-const elClassName = el.className;
-console.log(elClassName);
 
-// перезаписываем все классы
-// el.className = "red"
+// // Управление класами
+// // Свойства className и classList
 
-// свойство classList - метод для удаления/добавления одного класа
+// // свойство className
 
-// добавить класс
-el.classList.add('active');
-// удалить класс
-el.classList.remove('active');
-// добавить класс, если его нет, а если есть удалить.
-el.classList.toggle('active');
-// проверка наличия класса, возвращает true/false
-el.classList.contains('active')
+// // получаем элемент
+// const el = document.querySelector('.site-nav__text');
 
-// управление стилями
+// // получаем имена классов
+// const elClassName = el.className;
+// console.log(elClassName);
 
-// получает элемент
-const elm = document.querySelector('.site-nav__item');
-// задаем стиль с помощью CSS свойства
-elm.style.backgroundColor = "red";
-// для свойств из нескольких свойств записываем camalCase
+// // перезаписываем все классы
+// // el.className = "red"
 
-// сброс стиля
-elm.style.backgroundColor = "";
+// // свойство classList - метод для удаления/добавления одного класа
+
+// // добавить класс
+// el.classList.add('active');
+// // удалить класс
+// el.classList.remove('active');
+// // добавить класс, если его нет, а если есть удалить.
+// el.classList.toggle('active');
+// // проверка наличия класса, возвращает true/false
+// el.classList.contains('active')
+
+// // управление стилями
+
+// // получает элемент
+// const elm = document.querySelector('.site-nav__item');
+// // задаем стиль с помощью CSS свойства
+// elm.style.backgroundColor = "red";
+// // для свойств из нескольких свойств записываем camalCase
+
+// // сброс стиля
+// elm.style.backgroundColor = "";
+
+
+
+// События
+
+// element.addEventListner(event, handler[, options]);
+
+const button = document.querySelector('.js-button');
+
+// button.addEventListener('click', e => console.log('клик'));
+// button.addEventListener('click', e => console.log('клак'));
+
+// function showConsole() {
+//   console.log('Клик!');
+//   button.removeEventListener('click', showConsole);
+// }
+
+// button.addEventListener('click', showConsole);
+// button.addEventListener('mouseenter', showConsole)
+
+
+// обьект события
+
+function showConsole() {
+  // тип события
+  // console.log(event.type);
+  // // обьект на котором сработал оброботчик
+  console.log(event.target);
+  // обьект которому назначем обработчик
+  // console.log(event.currentTarget);
+  // положение курсора по оси Х
+  // console.log(event.clientX);
+  // // положение курсора по оси Y
+  // console.log(event.clientY);
+
+  // все детали события
+  // console.log(event)
+}
+
+
+// делигирование событий
+
+// const sectionButton = document.querySelector('.section-button');
+
+
+// sectionButton.addEventListener('click', event => {
+//   if (event.target.closest('.js-button')) {
+//     showConsole();
+//   }
+// });
+
+const link = document.querySelector('.site-nav__link');
+
+link.addEventListener('click', event => {
+  console.log('Наши действия');
+  // отменить действия браузера переход по ссылке
+  event.preventDefault();
+})
+
 
 
 

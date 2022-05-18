@@ -18,15 +18,13 @@ console.log(products);
 
 const productContainerEl = document.querySelector('.js-products')
 
-
 const makeProductCard = ({name, description, price}) => {
     const productEl = document.createElement('article');
     productEl.classList.add('product');
 
-    const productNameEl = document.createElement('h2');
-    productNameEl.textContent = name;
-    productNameEl.classList.add('product__name');
-
+    const nameEl = document.createElement('h2');
+    nameEl.textContent = name;
+    nameEl.classList.add('product__name');
 
     const descrEl = document.createElement('p');
     descrEl.textContent = description;
@@ -36,17 +34,19 @@ const makeProductCard = ({name, description, price}) => {
     priceEl.textContent = `Цена: ${price} кредитов`;
     priceEl.classList.add('product__price');
 
-    productEl.append(productNameEl, descrEl, priceEl);
+    productEl.append(nameEl, descrEl, priceEl);
     
     return productEl;
 }
 
-// console.log(makeProductCard(products[1]))
+// делает одну карточку
+console.log(makeProductCard(products[1]));
 
+// делает массив карточек
 const elements = products.map(makeProductCard);
 console.log(elements);
 
+// распыли массив элиментов в контейнер <div>
 productContainerEl.append(...elements);
 
-console.log(productContainerEl);
 

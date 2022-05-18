@@ -8,27 +8,29 @@ const magicBtn = document.querySelector('.js-magic-btn');
  * - contains(класс)
  */
 
+
 const navEl = document.querySelector('.site-nav');
 console.log(navEl.classList);
-// добавить классы
-navEl.classList.add('super-cool', 'qweqwewq');
+// add - добавить классы
+navEl.classList.add('super-cool', 'qwerty');
 
-// удалить классы
-navEl.classList.remove('qweqwewq', 'super-cool');
+// remove - удалить классы
+navEl.classList.remove('qwerty');
 
-// старый класс заменить на новый
+// replace - старый класс заменить на новый
 navEl.classList.replace('site-nav', 'site-menu');
 
-// а есть ли этот класс?
-console.log(navEl.classList.contains('site-menu'));
-
-// есть снимет, нет добавит
+// toggle переключение -> есть снимет, нет добавит
 magicBtn.addEventListener('click', () => {
-    navEl.classList.toggle('qweqwewq');
+    navEl.classList.toggle('qwerty');
 });
 
-const currentPageUrl = '/portfolio';
+// contains - а есть ли этот класс на элементе?
+console.log(navEl.classList.contains('site-nav'));
 
+const currentPageUrl = '/about';
+
+// ищем элимент с href="/portfolio"
 const linkEL = document.querySelector(`.site-nav__link[href="${currentPageUrl}"]`);
 console.log(linkEL);
 
