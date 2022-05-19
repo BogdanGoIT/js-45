@@ -11,14 +11,21 @@ const form = document.querySelector('.js-register-form');
 // блок подписок
 form.addEventListener('submit', onFormSubmit);
 
-// // блок всех оброботчиков подписок
+// блок всех оброботчиков подписок
 // function onFormSubmit(event) {
-//     // предотвратить перезагрузку страницы
+
+//     // preventDefault - предотвратить перезагрузку страницы
 //     event.preventDefault();
 
-//     // текущая цель
+//     // - urrentTarget - текущая цель - ссылается на элимент подписки события -> form
+//     // console.log(event.currentTarget)
+//     // - ссылается на элементы значений subscription
+//     // console.dir(event.currentTarget.elements.subscription.value);
+
+//     // все элементы формы    
 //     const formElements = event.currentTarget.elements;
 //     console.dir(formElements);
+
 //     const mail = formElements.email.value;
 //     const pass = formElements.password.value;
 //     const subscription = formElements.subscription.value;
@@ -30,16 +37,18 @@ form.addEventListener('submit', onFormSubmit);
 //     }
 //     console.log(FormData);
 
-//     console.log('Это сабмит формы');
+    
 // }
+
 
 // блок всех оброботчиков подписок
 function onFormSubmit(event) {
     event.preventDefault();
 
+    // если вам нужно собрать данные большой формы
     const formData = new FormData(event.currentTarget)
-    formData.forEach((value, name) => console.log (name, value));
-    
 
-    console.log('Это сабмит формы');
+    // первый параметр значение поля, второй имя 
+    formData.forEach((value, name) => console.log(name, value));
+    
 }

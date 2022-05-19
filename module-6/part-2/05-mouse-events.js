@@ -9,9 +9,14 @@
 
 const boxRef = document.querySelector('.js-box');
 
+// // mouseover - добавляет класс когда мышка заходит в границы блока
 // boxRef.addEventListener('mouseover', onMouseEnter);
+
+// // mouseout - снимает класс когда мышка выходит с границ блока
 // boxRef.addEventListener('mouseout', onMouseLeave);
-// boxRef.addEventListener('mousemove', onMouseMove);
+
+// движение мышки на элименте
+boxRef.addEventListener('mousemove', onMouseMove);
 
 function onMouseEnter(event) {
   const box = event.currentTarget;

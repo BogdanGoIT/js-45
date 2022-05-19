@@ -33,7 +33,7 @@ function onCloseModal() {
 }
 
 function onBackDropClick(event) {
-    // текущий элимент это где висит addEventListener
+    // текущий элимент - это где висит addEventListener
     console.log(event.currentTarget);
 
     // это куда мы в интерфейсе жмакнули
@@ -45,11 +45,21 @@ function onBackDropClick(event) {
     }
 }
 
+// закрыть модалку по Esc -> слушатель на onOpenModal, убирает onCloseModal
 function onEscKeyPress(event) {
     console.log(event);
-    if (event.code === 'Escape') {
+    const ESC_KEY_CODE = 'Escape';
+    const isEscKey = event.code === ESC_KEY_CODE;
+
+    if (isEscKey) {
         onCloseModal();
     }
 }
 
 
+// всплытие на верх:
+// div.backdrop      ------------------  ловим тут слушатель событий
+// div.modal             ----------
+//    p                    ----- происходит тут
+
+//                           Мы

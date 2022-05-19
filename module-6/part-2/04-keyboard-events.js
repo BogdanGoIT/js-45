@@ -10,7 +10,9 @@ const refs = {
 };
 
 // 'keydown' - реагирует на любое событие нажатия клавиш
-// 'keypress' - реагирует на нажате по символах 
+// 'keypress' - реагирует на нажате по символах
+
+// вешаем слушателя события addEventListener на window
 window.addEventListener('keypress', onKeypress);
 refs.clearBtn.addEventListener('click', onClearOutput);
 
@@ -23,5 +25,6 @@ function onKeypress(event) {
 }
 
 function onClearOutput() {
+  // очистить строку
     refs.output.textContent = '';
 }
