@@ -7,11 +7,11 @@
 // });
 
 // forEach
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-numbers.forEach((number, index, arr) => console.log(number > arr[index - 1]));
+// numbers.forEach((number, index, arr) => console.log(number > arr[index - 1]));
 
-console.log(numbers);
+// console.log(numbers);
 
 // forEach
 const logItems = (items) => 

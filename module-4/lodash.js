@@ -37,4 +37,3 @@ console.log(_.sumBy(players, player => player.timePlayed));
 
 console.log(_.minBy(players, player => player.timePlayed));
 
-

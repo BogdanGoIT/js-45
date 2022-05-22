@@ -2,6 +2,7 @@
  * Всплытие событий
  * event.target - целевой (исходный) элемент
  * event.currentTarget - текущий элемент, на слушателе которого поймали событие
+ * 
  */
 
 const refs = {
@@ -31,3 +32,6 @@ function onInnerChildClick(evt) {
   console.log('onInnerChildClick -> evt.target', evt.target);
   console.log('onInnerChildClick -> evt.currentTarget', evt.currentTarget);
 }
+
+
+// Спливають майже всі події, наприклад, події focus і blur не спливають, тому існують їх спливаючі аналоги - focusin і focusout.
