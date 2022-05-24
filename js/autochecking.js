@@ -2080,7 +2080,7 @@ const elms = document.querySelectorAll('li');
 
 // element.addEventListner(event, handler[, options]);
 
-const button = document.querySelector('.js-button');
+// const button = document.querySelector('.js-button');
 
 // button.addEventListener('click', e => console.log('клик'));
 // button.addEventListener('click', e => console.log('клак'));
@@ -2096,11 +2096,11 @@ const button = document.querySelector('.js-button');
 
 // обьект события
 
-function showConsole() {
+// function showConsole() {
   // тип события
   // console.log(event.type);
   // // обьект на котором сработал оброботчик
-  console.log(event.target);
+  // console.log(event.target);
   // обьект которому назначем обработчик
   // console.log(event.currentTarget);
   // положение курсора по оси Х
@@ -2110,7 +2110,7 @@ function showConsole() {
 
   // все детали события
   // console.log(event)
-}
+// }
 
 
 // делигирование событий
@@ -2124,14 +2124,35 @@ function showConsole() {
 //   }
 // });
 
-const link = document.querySelector('.site-nav__link');
+// const link = document.querySelector('.site-nav__link');
 
-link.addEventListener('click', event => {
-  console.log('Наши действия');
-  // отменить действия браузера переход по ссылке
-  event.preventDefault();
+// link.addEventListener('click', event => {
+//   console.log('Наши действия');
+//   // отменить действия браузера переход по ссылке
+//   event.preventDefault();
+// })
+
+
+const sectionButton = document.querySelector('.section-button');
+
+// const hoverHandlar = (e) => {
+//   // деструктуризуємо і переіменовуємо target на button
+//   const { target: button } = e;
+//   button.style.top = `${Math.floor(Math.random() * (window.innerHeight - button.clientHeight))}px`;
+//   button.style.left = `${Math.floor(Math.random() *(window.innerWidth - button.clientWidth))}px`;
+// }
+
+// sectionButton.addEventListener('mouseover', hoverHandlar);
+
+
+sectionButton.addEventListener('click', (e) => {
+  const { target } = e;
+  if (!target.dataset.modal) {
+    return;
+  }
+
+  console.log(target.dataset.modal);
 })
-
 
 
 
