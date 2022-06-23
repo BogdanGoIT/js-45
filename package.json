@@ -1,32 +1,28 @@
 {
-  "name": "js-45",
-  "version": "1.0.0",
+  "name": "parcel-project-template",
+  "version": "1.1.0",
   "description": "",
+  "main": "index.js",
+  "homepage": "https://BogdanGoIT.github.io/js-45",
   "scripts": {
-    "start": "node app.js",
-    "prestart": "echo \"это престарт\"",
-    "poststart": "echo \"это постстарт\"",
-    "build": "babel src -d dist"
+    "dev": "parcel src/*.html --open",
+    "build": "parcel build src/*.html --public-url /js-45/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BogdanGoIT/js-45.git"
+    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BogdanGoIT/js-45/issues"
-  },
-  "homepage": "https://github.com/BogdanGoIT/js-45#readme",
-  "dependencies": {
-    "express": "^4.18.1",
-    "joi": "^17.6.0",
-    "shortid": "^2.2.16"
+    "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.18.0",
-    "@babel/preset-env": "^7.18.0"
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "posthtml-include": "^1.6.2",
+    "sass": "^1.32.8"
   }
 }
